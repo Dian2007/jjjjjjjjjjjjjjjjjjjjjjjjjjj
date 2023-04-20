@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+#include <deque>
+
+int main() {
+    deque<int> a;
+    int summ = 0;
+    for (int i = 0; i < 20; i++) {
+        a.push_back(rand() % 10);
+        summ += a[i];
+        cout << a[i] << " ";
+    }
+    cout << endl;
+    
+    auto it = a.begin();
+    it += 10;
+    a.insert(it, summ);
+    
+    for(deque<int>::iterator it = a.begin(); it != a.end(); it++) {
+        cout << *it << " ";
+    }
+}
+
+    return 0;
+}
